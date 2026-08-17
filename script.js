@@ -158,7 +158,7 @@ mobileNavLinks.forEach(link => {
         block: 'start'
       });
 
-    }, 200);
+    }, 50);
 
   });
 
