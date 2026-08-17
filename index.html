@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="description"
+    content="DSPECTSTARS provides custom ambient lighting and starlight headliner installations."
+  >
+
+  <title>DSPECTSTARS | Custom Automotive Lighting</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@300;400;500;600&family=Orbitron:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            orbitron: ["Orbitron", "sans-serif"],
+            audiowide: ["Audiowide", "sans-serif"],
+            inter: ["Inter", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* ABOUT SECTION */
+    .about-dspecs {
+      position: relative;
+      isolation: isolate;
+      min-height: 760px;
+      overflow: hidden;
+      background: #1a2636;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .about-dspecs::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background:
+        radial-gradient(circle at 8% 8%, rgba(119, 154, 202, 0.18), transparent 34%),
+        linear-gradient(115deg, #27364a 0%, #1c293a 52%, #111a27 100%);
+    }
+
+    .about-dspecs-inner {
+      width: min(1520px, 100%);
+      min-height: 760px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 52%) minmax(0, 48%);
+      align-items: stretch;
+    }
+
+    .about-copy {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 800px;
+      padding: 105px 42px 105px clamp(28px, 6vw, 96px);
+    }
+
+    .about-kicker {
+      display: block;
+      margin-bottom: 26px;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+    }
+
+    .about-title {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 0 30px;
+      color: #fff;
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(3.25rem, 4.9vw, 5.25rem);
+      font-weight: 500;
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+      text-wrap: balance;
+    }
+
+    .about-copy p {
+      max-width: 690px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.79);
+      font-size: clamp(1rem, 1.14vw, 1.18rem);
+      line-height: 1.72;
+    }
+
+    .about-copy p + p {
+      margin-top: 18px;
+    }
+
+    .about-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      align-self: flex-start;
+      min-width: 270px;
+      margin-top: 36px;
+      padding: 19px 30px;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.01);
+      font-family: "Orbitron", sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .about-cta:hover {
+      color: #162131;
+      background: #fff;
+      transform: translateY(-2px);
+    }
+
+    .about-visual {
+      position: relative;
+      min-height: 760px;
+      overflow: hidden;
+    }
+
+    .about-main-car {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: 54% center;
+      filter: brightness(0.72) contrast(1.05) saturate(0.9);
+      transform: scale(1.015);
+    }
+
+    .about-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, #1f2d40 0%, rgba(31, 45, 64, 0.94) 5%, rgba(31, 45, 64, 0.42) 22%, rgba(31, 45, 64, 0) 48%),
+        linear-gradient(180deg, rgba(9, 14, 22, 0.08), rgba(9, 14, 22, 0.34));
+    }
+
+    .about-visual::after {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      bottom: 0;
+      height: 1px;
+      z-index: 2;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+    }
+
+    @media (max-width: 1050px) {
+      .about-dspecs,
+      .about-dspecs-inner {
+        min-height: auto;
+      }
+
+      .about-dspecs-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .about-copy {
+        max-width: none;
+        padding: 88px clamp(24px, 6vw, 72px) 58px;
+      }
+
+      .about-title {
+        max-width: 760px;
+        font-size: clamp(3rem, 8vw, 5rem);
+      }
+
+      .about-copy p {
+        max-width: 820px;
+      }
+
+      .about-visual {
+        min-height: 560px;
+      }
+
+      .about-main-car {
+        object-position: center 44%;
+      }
+
+      .about-visual::before {
+        background: linear-gradient(180deg, #1c293a 0%, rgba(28, 41, 58, 0.62) 15%, rgba(28, 41, 58, 0) 42%);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .about-copy {
+        padding: 70px 22px 46px;
+      }
+
+      .about-kicker {
+        margin-bottom: 20px;
+        font-size: 0.68rem;
+        letter-spacing: 0.3em;
+      }
+
+      .about-title {
+        margin-bottom: 24px;
+        font-size: clamp(2.55rem, 12vw, 3.85rem);
+        line-height: 1.02;
+      }
+
+      .about-copy p {
+        font-size: 0.98rem;
+        line-height: 1.68;
+      }
+
+      .about-copy p + p {
+        margin-top: 15px;
+      }
+
+      .about-cta {
+        width: 100%;
+        min-width: 0;
+        margin-top: 30px;
+        padding: 18px 24px;
+      }
+
+      .about-visual {
+        min-height: 390px;
+      }
+
+      .about-main-car {
+        object-position: 58% center;
+      }
+    }
+
+    /* ===== PAGE FLOW + HERO FIXES ===== */
+    html {
+      scroll-behavior: smooth;
+      background: #03050a;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 50% -10%, rgba(77, 116, 255, 0.10), transparent 36rem),
+        #03050a;
+    }
+
+    .hero {
+      min-height: 100svh;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-content {
+      min-height: 100svh;
+      padding-bottom: 86px;
+    }
+
+    .hero-services {
+      bottom: 24px;
+    }
+
+    /* Removes the visual gap between the hero and the next section */
+    .hero + .about-dspecs {
+      margin-top: 0 !important;
+    }
+
+    .about-dspecs {
+      min-height: 680px;
+      margin: 0;
+      background: #17110f;
+      border-top: 0;
+    }
+
+    .about-dspecs::before {
+      background:
+        radial-gradient(circle at 8% 8%, rgba(177, 116, 91, 0.20), transparent 34%),
+        radial-gradient(circle at 86% 70%, rgba(78, 106, 180, 0.13), transparent 35%),
+        linear-gradient(115deg, #2a1e1a 0%, #1b1412 52%, #0d0b0c 100%);
+    }
+
+    .about-dspecs-inner {
+      width: 100%;
+      max-width: none;
+      min-height: 680px;
+      grid-template-columns: minmax(0, 46%) minmax(0, 54%);
+      gap: 0;
+    }
+
+    .about-copy {
+      max-width: 760px;
+      padding-top: 82px;
+      padding-bottom: 82px;
+    }
+
+    .about-visual {
+      min-height: 680px;
+      background: #17110f;
+    }
+
+    .about-main-car {
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.002);
+      filter: brightness(0.78) contrast(1.06) saturate(0.92);
+    }
+
+    .about-visual::before {
+      background:
+        linear-gradient(90deg, #1b1412 0%, rgba(27, 20, 18, 0.88) 7%, rgba(27, 20, 18, 0.30) 24%, transparent 48%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.18));
+    }
+
+    /* ===== REUSABLE SECTION SHELL ===== */
+    .showcase-section {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: clamp(88px, 9vw, 138px) 24px;
+      background: #05070d;
+    }
+
+    .showcase-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(62, 104, 255, 0.11), transparent 28rem),
+        radial-gradient(circle at 88% 82%, rgba(134, 77, 255, 0.09), transparent 25rem);
+    }
+
+    .showcase-wrap {
+      width: min(1380px, 100%);
+      margin: 0 auto;
+    }
+
+    .showcase-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 520px);
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 54px;
+    }
+
+    .showcase-eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: #80a7ff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+    }
+
+    .showcase-title {
+      max-width: 860px;
+      margin: 0;
+      color: #fff;
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(2.55rem, 5vw, 5.3rem);
+      font-weight: 500;
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      text-wrap: balance;
+    }
+
+    .showcase-description {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.64);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      grid-auto-rows: 210px;
+      gap: 16px;
+    }
+
+    .gallery-card {
+      position: relative;
+      grid-column: span 4;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 22px;
+      background: #0a0d15;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.30);
+    }
+
+    .gallery-card:nth-child(1) {
+      grid-column: span 7;
+      grid-row: span 2;
+    }
+
+    .gallery-card:nth-child(2) {
+      grid-column: span 5;
+      grid-row: span 1;
+    }
+
+    .gallery-card:nth-child(3) {
+      grid-column: span 5;
+      grid-row: span 1;
+    }
+
+    .gallery-card:nth-child(4),
+    .gallery-card:nth-child(5),
+    .gallery-card:nth-child(6) {
+      grid-column: span 4;
+      grid-row: span 1;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(.2,.7,.2,1), filter 0.4s ease;
+    }
+
+    .gallery-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, transparent 38%, rgba(2, 4, 9, 0.88) 100%),
+        linear-gradient(120deg, rgba(70, 111, 255, 0.09), transparent 48%);
+      pointer-events: none;
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.055);
+      filter: brightness(1.08);
+    }
+
+    .gallery-card-copy {
+      position: absolute;
+      z-index: 2;
+      left: 22px;
+      right: 22px;
+      bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+    }
+
+    .gallery-card-copy span {
+      color: rgba(255,255,255,.58);
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+
+    .gallery-card-copy strong {
+      display: block;
+      margin-top: 6px;
+      color: #fff;
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(.92rem, 1.2vw, 1.18rem);
+      font-weight: 500;
+    }
+
+    .gallery-card-copy i {
+      display: grid;
+      width: 40px;
+      height: 40px;
+      flex: 0 0 auto;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 50%;
+      color: #fff;
+      backdrop-filter: blur(10px);
+    }
+
+    /* ===== FINAL CTA ===== */
+    .final-cta {
+      position: relative;
+      overflow: hidden;
+      padding: 100px 24px;
+      background:
+        linear-gradient(110deg, rgba(4, 7, 15, 0.97), rgba(10, 18, 37, 0.83)),
+        url("assets/stars.png") center/cover no-repeat;
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .final-cta-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .final-cta h2 {
+      max-width: 780px;
+      margin: 0;
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(2.2rem, 4.6vw, 4.8rem);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .final-cta-button {
+      display: inline-flex;
+      min-width: 220px;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      padding: 19px 27px;
+      border-radius: 999px;
+      background: #fff;
+      color: #080b12;
+      font-family: "Orbitron", sans-serif;
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: .3s ease;
+    }
+
+    .final-cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 45px rgba(100, 137, 255, .24);
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      padding: 72px 24px 28px;
+      background: #020307;
+    }
+
+    .footer-inner {
+      width: min(1380px, 100%);
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: 64px;
+      padding-bottom: 58px;
+    }
+
+    .footer-brand img {
+      width: 82px;
+      height: 82px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    .footer-brand h3 {
+      margin: 0 0 14px;
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(1.55rem, 2vw, 2.25rem);
+      letter-spacing: .02em;
+    }
+
+    .footer-brand p {
+      max-width: 450px;
+      margin: 0;
+      color: rgba(255,255,255,.56);
+      line-height: 1.75;
+    }
+
+    .footer-column h4 {
+      margin: 0 0 22px;
+      color: rgba(255,255,255,.42);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 13px;
+    }
+
+    .footer-links a {
+      width: fit-content;
+      color: rgba(255,255,255,.82);
+      text-decoration: none;
+      transition: .25s ease;
+    }
+
+    .footer-links a:hover {
+      color: #8fb0ff;
+      transform: translateX(4px);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .footer-social a {
+      display: grid;
+      width: 43px;
+      height: 43px;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      color: #fff;
+      text-decoration: none;
+      transition: .25s ease;
+    }
+
+    .footer-social a:hover {
+      border-color: rgba(143,176,255,.65);
+      background: rgba(143,176,255,.10);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: rgba(255,255,255,.36);
+      font-size: .78rem;
+    }
+
+    @media (max-width: 1050px) {
+      .about-dspecs-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .about-copy {
+        max-width: none;
+      }
+
+      .about-visual {
+        min-height: 560px;
+      }
+
+      .showcase-heading {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-card,
+      .gallery-card:nth-child(n) {
+        grid-column: span 6;
+        grid-row: span 1;
+      }
+
+      .gallery-card:nth-child(1) {
+        grid-row: span 2;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero-content {
+        min-height: 92svh;
+        padding-bottom: 118px;
+      }
+
+      .hero-services {
+        left: 20px;
+        right: 20px;
+        bottom: 18px;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .about-copy {
+        padding: 68px 22px 44px;
+      }
+
+      .about-visual {
+        min-height: 430px;
+      }
+
+      .about-main-car {
+        object-position: 58% center;
+      }
+
+      .showcase-section {
+        padding: 78px 16px;
+      }
+
+      .showcase-heading {
+        margin-bottom: 34px;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: 300px;
+      }
+
+      .gallery-card,
+      .gallery-card:nth-child(n) {
+        grid-column: auto;
+        grid-row: auto;
+      }
+
+      .gallery-card:first-child {
+        min-height: 420px;
+      }
+
+      .final-cta {
+        padding: 78px 20px;
+      }
+
+      .final-cta-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .final-cta-button {
+        width: 100%;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+
+    /* ===== ABOUT SECTION — REMOVE DEAD SPACE ===== */
+    .about-dspecs,
+    .about-dspecs-inner {
+      min-height: 620px !important;
+    }
+
+    .about-dspecs-inner {
+      align-items: stretch !important;
+    }
+
+    .about-copy {
+      justify-content: flex-start !important;
+      padding: 58px 42px 58px clamp(28px, 6vw, 96px) !important;
+    }
+
+    .about-visual {
+      min-height: 620px !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      align-self: stretch !important;
+      overflow: hidden !important;
+    }
+
+    .about-main-car {
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: 56% 48% !important;
+      transform: scale(1.18) !important;
+      transform-origin: center !important;
+    }
+
+    @media (max-width: 1050px) {
+      .about-copy {
+        padding: 54px clamp(24px, 6vw, 72px) 42px !important;
+      }
+
+      .about-visual {
+        min-height: 500px !important;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .about-copy {
+        padding: 46px 22px 38px !important;
+      }
+
+      .about-visual {
+        min-height: 360px !important;
+      }
+
+      .about-main-car {
+        object-position: 60% center !important;
+        transform: scale(1.14) !important;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body class="bg-black font-inter text-white">
+
+  <main id="home" class="hero">
+
+    <!-- Video Background -->
+    <video
+      class="hero-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="assets/heropic.png"
+    >
+      <source src="assets/heropic.png" type="video/mp4">
+    </video>
+
+    <!-- Overlays -->
+    <div class="hero-dark-overlay"></div>
+    <div class="hero-gradient-overlay"></div>
+    <div class="hero-grid-overlay"></div>
+
+    <!-- Glows -->
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-inner">
+
+        <a href="#home" class="header-name">
+          DSPECTSTARS
+        </a>
+
+        <nav class="desktop-nav">
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a
+          href="https://instagram.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="header-instagram"
+          aria-label="Visit DSPECTSTARS on Instagram"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <button
+          id="menuButton"
+          type="button"
+          class="menu-button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          <span class="menu-line menu-line-one"></span>
+          <span class="menu-line menu-line-two"></span>
+        </button>
+
+      </div>
+    </header>
+
+    <!-- Fullscreen Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu">
+
+      <div class="mobile-menu-grid"></div>
+      <div class="mobile-menu-glow mobile-menu-glow-one"></div>
+      <div class="mobile-menu-glow mobile-menu-glow-two"></div>
+
+      <nav class="mobile-nav">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+
+        <a
+          href="https://instagram.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mobile-instagram"
+          aria-label="Instagram"
+        >
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      </nav>
+
+    </div>
+
+    <!-- Hero Content -->
+    <section class="hero-content">
+
+      <div class="logo-area">
+
+
+
+        <img
+          src="assets/LOGO.png"
+          alt="DSPECTSTARS"
+          class="hero-logo"
+        >
+
+        <h1 class="hero-brand-name">
+          DSPECTSTARS
+        </h1>
+
+      
+
+        <!-- Updated Buttons -->
+        <div class="hero-button-row">
+
+          <a href="#booking" class="hero-action-button book-button">
+            <span class="button-icon">
+              <i class="fa-solid fa-calendar-check"></i>
+            </span>
+
+            <span class="button-copy">
+              <small>Reserve your spot</small>
+              <strong>Book Now</strong>
+            </span>
+
+            <span class="button-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </a>
+
+          <a href="#pricing" class="hero-action-button pricing-button">
+            <span class="button-icon">
+              <i class="fa-solid fa-tags"></i>
+            </span>
+
+            <span class="button-copy">
+              <small>View packages</small>
+              <strong>Pricing</strong>
+            </span>
+
+            <span class="button-arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- Bottom Labels -->
+    <div class="hero-services">
+      <span>Ambient Lighting</span>
+      <span class="service-dot"></span>
+      <span>Starlight Headliners</span>
+      <span class="service-dot"></span>
+      <span>Custom Installations</span>
+    </div>
+
+  </main>
+
+
+ <section id="services" class="content-section">
+  <span class="section-label">ABOUT DSPECS</span>
+
+  <h2>
+    Where Light Meets
+    <strong>Automotive Style</strong>
+  </h2>
+
+  <p class="section-description">
+    At DSpecs, we're passionate about helping you transform your vehicle into
+    something that reflects your unique style. We specialize in professionally
+    installed ambient lighting with vibrant colors and dynamic lighting effects,
+    along with handcrafted fiber-optic starlight headliners featuring customizable
+    stars, twinkling effects, constellations, and shooting stars.
+  </p>
+
+  <p class="section-description">
+    Every installation is completed with precision and attention to detail for a
+    clean, factory-quality finish that looks great and performs reliably. Whether
+    you want a subtle upgrade or a complete custom experience, we're committed to
+    delivering craftsmanship you'll enjoy every time you drive.
+  </p>
+</section>
+
+
+
+
+<section id="pricing" class="py-24 bg-[#05070d]">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- SECTION HEADING -->
+        <div class="text-center mb-14">
+            <span class="showcase-eyebrow">Pricing</span>
+
+            <h2 class="showcase-title mx-auto">
+                Choose Your Lighting Package.
+            </h2>
+
+            <p class="max-w-2xl mx-auto mt-5 text-gray-400 leading-relaxed">
+                Build the perfect lighting setup for your vehicle with custom
+                starlight headliners, suede upgrades, shooting stars, ambient
+                lighting and custom designs.
+            </p>
+        </div>
+
+        <!-- CONTROL FEATURES -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-7">
+
+            <div class="package-card text-center">
+                <div class="text-3xl text-blue-500 mb-3">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+
+                <h3 class="!mb-1">App Controlled</h3>
+
+                <p class="text-sm text-gray-400">
+                    Control colors and effects directly from your phone.
+                </p>
+            </div>
+
+            <div class="package-card text-center">
+                <div class="text-3xl text-blue-500 mb-3">
+                    <i class="fa-solid fa-sliders"></i>
+                </div>
+
+                <h3 class="!mb-1">Touch Remote</h3>
+
+                <p class="text-sm text-gray-400">
+                    Quickly change colors, brightness and lighting modes.
+                </p>
+            </div>
+
+            <div class="package-card text-center">
+                <div class="text-3xl text-blue-500 mb-3">
+                    <i class="fa-solid fa-music"></i>
+                </div>
+
+                <h3 class="!mb-1">Music Mode</h3>
+
+                <p class="text-sm text-gray-400">
+                    Lighting effects react and move with your music.
+                </p>
+            </div>
+
+            <div class="package-card text-center">
+                <div class="text-3xl text-blue-500 mb-3">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+
+                <h3 class="!mb-1">100+ Modes</h3>
+
+                <p class="text-sm text-gray-400">
+                    Choose from a wide range of colors and custom effects.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- MAIN PACKAGE GRID -->
+        <div class="grid lg:grid-cols-2 gap-7">
+
+            <!-- STARLIGHT PACKAGES -->
+            <div class="package-card">
+
+                <h3>✦ Starlight Packages ✦</h3>
+
+                <div class="package-grid">
+
+                    <div>
+                        <div class="price-row">
+                            <span>500 Stars</span>
+                            <strong>$600</strong>
+                        </div>
+
+                        <div class="price-row">
+                            <span>600 Stars</span>
+                            <strong>$700</strong>
+                        </div>
+
+                        <div class="price-row">
+                            <span>700 Stars</span>
+                            <strong>$850</strong>
+                        </div>
+
+                        <div class="price-row">
+                            <span>800 Stars</span>
+                            <strong>$950</strong>
+                        </div>
+
+                        <div class="price-row">
+                            <span>900 Stars</span>
+                            <strong>$900</strong>
+                        </div>
+
+                        <div class="price-row">
+                            <span>1,000 Stars</span>
+                            <strong>$1,000</strong>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="price-row">
+                            <span>1,500 Stars</span>
+                            <strong>$1,500</strong>
+                        </div>
+
+                        <div class="price-row">
+                            <span>2,000 Stars</span>
+                            <strong>$2,000</strong>
+                        </div>
+
+                        <div class="price-row">
+                            <span>2,500 Stars</span>
+                            <strong>$2,500</strong>
+                        </div>
+
+                        <div class="price-row">
+                            <span>3,000 Stars</span>
+                            <strong>$3,000</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="text-center text-xs uppercase tracking-wider text-gray-400 mt-8">
+                    Pricing includes standard headliner and installation
+                </p>
+
+            </div>
+
+            <!-- SHOOTING STARS -->
+            <div class="package-card">
+
+                <h3>Shooting Stars Add-On</h3>
+
+                <div class="price-row">
+                    <span>4 Shooting Stars</span>
+                    <strong>$120</strong>
+                </div>
+
+                <div class="price-row">
+                    <span>8 Shooting Stars</span>
+                    <strong>$200</strong>
+                </div>
+
+                <div class="price-row">
+                    <span>15 Shooting Stars</span>
+                    <strong>$300</strong>
+                </div>
+
+                <div class="price-row">
+                    <span>25 Shooting Stars</span>
+                    <strong>$400</strong>
+                </div>
+
+                <div class="price-row">
+                    <span>41 Shooting Stars</span>
+                    <strong>$600</strong>
+                </div>
+
+            </div>
+
+            <!-- SUEDE HEADLINERS -->
+            <div class="package-card">
+
+                <h3>Suede Headliners</h3>
+
+                <div class="price-row">
+                    <span>Cars</span>
+                    <strong>$450</strong>
+                </div>
+
+                <div class="price-row">
+                    <span>Trucks</span>
+                    <strong>$550</strong>
+                </div>
+
+                <div class="price-row">
+                    <span>SUVs</span>
+                    <strong>$700</strong>
+                </div>
+
+                <div class="price-row">
+                    <span>Visors</span>
+                    <strong>$150</strong>
+                </div>
+
+                <div class="price-row">
+                    <span>Pillars <small>Pair of 2</small></span>
+                    <strong>$100</strong>
+                </div>
+
+                <div class="price-row">
+                    <span>Sunroof</span>
+                    <strong>$50</strong>
+                </div>
+
+            </div>
+
+            <!-- AMBIENT LIGHTING -->
+            <div class="package-card">
+
+                <h3>Ambient Lighting Packages</h3>
+
+                <div class="price-row price-row-stacked">
+                    <span>
+                        Basic Kit
+                        <small>Dash and doors</small>
+                    </span>
+
+                    <strong>$500</strong>
+                </div>
+
+                <div class="price-row price-row-stacked">
+                    <span>
+                        Deluxe Kit
+                        <small>Dash, doors and console</small>
+                    </span>
+
+                    <strong>$700</strong>
+                </div>
+
+                <div class="price-row price-row-stacked">
+                    <span>
+                        Full Interior Kit
+                        <small>Dash, doors, console and footwells</small>
+                    </span>
+
+                    <strong>$900</strong>
+                </div>
+
+            </div>
+
+            <!-- HEADLINER DESIGNS -->
+            <div class="package-card">
+
+                <h3>Headliner Designs</h3>
+
+                <div class="price-row">
+                    <span>Custom Logos</span>
+
+                    <strong>
+                        <small>Starting at</small>
+                        $300
+                    </strong>
+                </div>
+
+                <div class="price-row">
+                    <span>Shooting Star Designs</span>
+
+                    <strong>
+                        <small>Starting at</small>
+                        $200
+                    </strong>
+                </div>
+
+            </div>
+
+            <!-- CUSTOM DESIGNS -->
+            <div class="package-card">
+
+                <h3>Custom Designs & Pillar Add-Ons</h3>
+
+                <div class="price-row">
+                    <span>Custom Designs</span>
+                    <strong>$150</strong>
+                </div>
+
+                <div class="price-row">
+                    <span>Stars in Front Pillars</span>
+                    <strong>$100</strong>
+                </div>
+
+                <div class="price-row">
+                    <span>Stars in Front & Back Pillars</span>
+                    <strong>$200</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BOOKING CTA -->
+        <div class="pricing-cta mt-10">
+            <div>
+                <span class="showcase-eyebrow">Ready to Upgrade?</span>
+
+                <h3>Book Your Custom Installation.</h3>
+
+                <p>
+                    Contact DSPECSTARS to confirm your vehicle, package and
+                    installation availability.
+                </p>
+            </div>
+
+            <div class="pricing-cta-buttons">
+                <a href="tel:6824622425" class="pricing-call-btn">
+                    <i class="fa-solid fa-phone"></i>
+                    682-462-2425
+                </a>
+
+                <a
+                    href="https://www.instagram.com/yaboy.dono/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="pricing-social-btn"
+                >
+                    <i class="fa-brands fa-instagram"></i>
+                    @YABOY.DONO
+                </a>
+            </div>
+        </div>
+
+        <p class="text-center text-xs text-gray-500 mt-8">
+            Final pricing may vary depending on vehicle size, headliner condition,
+            selected materials and custom design requirements.
+        </p>
+
+    </div>
+</section>
+  </section>
+
+  <section id="booking" class="final-cta">
+    <div class="final-cta-inner">
+      <div>
+        <span class="showcase-eyebrow">Ready to transform your interior?</span>
+        <h2>Build the lighting setup your vehicle deserves.</h2>
+      </div>
+
+      <a href="#contact" class="final-cta-button">
+        Start Your Build
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <footer id="contact" class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <img src="assets/LOGO.png" alt="DSPECTSTARS logo">
+          <h3>DSPECTSTARS</h3>
+          <p>
+            Custom ambient lighting, starlight headliners, suede conversions,
+            and detailed interior installations built for a clean, premium finish.
+          </p>
+
+          <div class="footer-social">
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="tel:+10000000000" aria-label="Call DSPECTSTARS">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+            <a href="mailto:hello@dspectstars.com" aria-label="Email DSPECTSTARS">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Navigate</h4>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#pricing">Pricing</a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <div class="footer-links">
+            <a href="tel:+10000000000">Call or Text</a>
+            <a href="mailto:hello@dspectstars.com">hello@dspectstars.com</a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">@DSPECTSTARS</a>
+            <span>By appointment only</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 DSPECTSTARS. All rights reserved.</span>
+        <span>Custom automotive lighting and interiors.</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
