@@ -115,4 +115,51 @@ galleryItems.forEach((item) => {
 
   galleryObserver.observe(item);
 
+});/* ========================================
+   MOBILE NAV LINKS
+========================================= */
+
+const mobileNavLinks = document.querySelectorAll(
+  '.mobile-nav-link'
+);
+
+mobileNavLinks.forEach(link => {
+
+  link.addEventListener('click', function (e) {
+
+    const targetId = this.getAttribute('href');
+
+    if (!targetId || !targetId.startsWith('#')) return;
+
+    const targetSection = document.querySelector(targetId);
+
+    if (!targetSection) return;
+
+    e.preventDefault();
+
+    /* Close mobile menu */
+    mobileMenu.classList.remove('active');
+    menuButton.classList.remove('active');
+
+    menuButton.setAttribute(
+      'aria-expanded',
+      'false'
+    );
+
+    document.body.classList.remove(
+      'menu-open'
+    );
+
+    /* Wait for menu to begin closing */
+    setTimeout(() => {
+
+      targetSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
+    }, 200);
+
+  });
+
 });

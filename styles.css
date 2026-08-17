@@ -3811,4 +3811,507 @@ strong {
     aspect-ratio: 16 / 10;
   }
 
+}/* ========================================
+   DSPECTSTARS FOOTER
+======================================== */
+
+.ds-footer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  padding: 90px 24px 34px;
+
+  background: #020307;
+
+  border-top: 1px solid rgba(255,255,255,.07);
+}
+
+
+/* OPTIONAL BACKGROUND IMAGE */
+
+.ds-footer-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+
+  background:
+    url("assets/stars.png")
+    center 45% / cover
+    no-repeat;
+
+  opacity: .18;
+
+  filter:
+    grayscale(.35)
+    brightness(.42);
+}
+
+
+/* DARK OVERLAY */
+
+.ds-footer-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(62, 96, 180, .10),
+      transparent 35rem
+    ),
+    linear-gradient(
+      180deg,
+      rgba(2,3,7,.82) 0%,
+      rgba(2,3,7,.94) 65%,
+      #020307 100%
+    );
+}
+
+
+/* MAIN CONTAINER */
+
+.ds-footer-inner {
+  position: relative;
+
+  width: min(1100px, 100%);
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+/* ========================================
+   BRAND
+======================================== */
+
+.ds-footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.ds-footer-logo {
+  width: 95px;
+  height: 95px;
+
+  margin-bottom: 18px;
+
+  object-fit: contain;
+}
+
+
+.ds-footer-brand h2 {
+  margin: 0;
+
+  color: #fff;
+
+  font-family: "Orbitron", sans-serif;
+
+  font-size:
+    clamp(1.65rem, 3vw, 2.4rem);
+
+  font-weight: 600;
+
+  letter-spacing: .18em;
+}
+
+
+.ds-footer-tagline {
+  display: block;
+
+  margin-top: 10px;
+
+  color: #80a7ff;
+
+  font-size: .63rem;
+  font-weight: 700;
+
+  letter-spacing: .35em;
+
+  text-transform: uppercase;
+}
+
+
+.ds-footer-brand p {
+  max-width: 680px;
+
+  margin: 26px auto 0;
+
+  color: rgba(255,255,255,.58);
+
+  font-size: .96rem;
+
+  line-height: 1.75;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.ds-footer-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px 34px;
+
+  margin-top: 38px;
+}
+
+
+.ds-footer-nav a {
+  position: relative;
+
+  color: rgba(255,255,255,.72);
+
+  font-size: .76rem;
+  font-weight: 600;
+
+  letter-spacing: .12em;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    color .25s ease,
+    transform .25s ease;
+}
+
+
+.ds-footer-nav a:hover {
+  color: #fff;
+
+  transform: translateY(-2px);
+}
+
+
+/* LITTLE DOT BETWEEN LINKS */
+
+.ds-footer-nav a:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  top: 50%;
+  right: -19px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.25);
+
+  transform: translateY(-50%);
+}
+
+
+/* ========================================
+   CONTACT
+======================================== */
+
+.ds-footer-contact {
+  margin-top: 30px;
+}
+
+
+.ds-footer-contact a {
+  color: rgba(255,255,255,.82);
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition: color .25s ease;
+}
+
+
+.ds-footer-contact a:hover {
+  color: #80a7ff;
+}
+
+
+/* ========================================
+   SOCIAL ICONS
+======================================== */
+
+.ds-footer-socials {
+  display: flex;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 24px;
+}
+
+
+.ds-footer-socials a {
+  width: 46px;
+  height: 46px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255,255,255,.13);
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.025);
+
+  color: #fff;
+
+  font-size: 1rem;
+
+  text-decoration: none;
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease,
+    background .25s ease;
+}
+
+
+.ds-footer-socials a:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(128,167,255,.60);
+
+  background: rgba(128,167,255,.09);
+}
+
+
+/* ========================================
+   DIVIDER
+======================================== */
+
+.ds-footer-divider {
+  width: 100%;
+
+  height: 1px;
+
+  margin: 55px 0 30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.13),
+      transparent
+    );
+}
+
+
+/* ========================================
+   COPYRIGHT
+======================================== */
+
+.ds-footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.ds-footer-bottom p {
+  margin: 0;
+
+  color: rgba(255,255,255,.40);
+
+  font-size: .67rem;
+  font-weight: 600;
+
+  letter-spacing: .30em;
+
+  text-transform: uppercase;
+}
+
+
+.ds-footer-credit {
+  color: rgba(255,255,255,.30) !important;
+}
+
+
+/* ========================================
+   PAYMENT METHODS
+======================================== */
+
+.ds-footer-payments {
+  margin-top: 28px;
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+
+.ds-footer-payments > span {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: rgba(255,255,255,.26);
+
+  font-size: .55rem;
+  font-weight: 700;
+
+  letter-spacing: .30em;
+
+  text-transform: uppercase;
+}
+
+
+.payment-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 22px;
+}
+
+
+.payment-icons i {
+  color: rgba(255,255,255,.58);
+
+  font-size: 2rem;
+
+  transition:
+    color .25s ease,
+    transform .25s ease;
+}
+
+
+.payment-icons i:hover {
+  color: #fff;
+
+  transform: translateY(-2px);
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 640px) {
+
+  .ds-footer {
+    padding:
+      70px 18px
+      calc(28px + env(safe-area-inset-bottom));
+  }
+
+
+  .ds-footer-logo {
+    width: 78px;
+    height: 78px;
+
+    margin-bottom: 15px;
+  }
+
+
+  .ds-footer-brand h2 {
+    font-size: 1.45rem;
+
+    letter-spacing: .13em;
+  }
+
+
+  .ds-footer-tagline {
+    font-size: .55rem;
+
+    letter-spacing: .27em;
+  }
+
+
+  .ds-footer-brand p {
+    max-width: 420px;
+
+    margin-top: 22px;
+
+    font-size: .89rem;
+
+    line-height: 1.7;
+  }
+
+
+  .ds-footer-nav {
+    gap: 18px 24px;
+
+    margin-top: 32px;
+  }
+
+
+  .ds-footer-nav a {
+    font-size: .67rem;
+  }
+
+
+  /* Remove dots on mobile */
+
+  .ds-footer-nav a::after {
+    display: none;
+  }
+
+
+  .ds-footer-contact {
+    margin-top: 28px;
+  }
+
+
+  .ds-footer-contact a {
+    font-size: .94rem;
+  }
+
+
+  .ds-footer-socials {
+    margin-top: 22px;
+  }
+
+
+  .ds-footer-socials a {
+    width: 44px;
+    height: 44px;
+  }
+
+
+  .ds-footer-divider {
+    margin: 42px 0 26px;
+  }
+
+
+  .ds-footer-bottom {
+    gap: 11px;
+  }
+
+
+  .ds-footer-bottom p {
+    max-width: 330px;
+
+    font-size: .56rem;
+
+    line-height: 1.7;
+
+    letter-spacing: .22em;
+  }
+
+
+  .payment-icons {
+    gap: 17px;
+  }
+
+
+  .payment-icons i {
+    font-size: 1.7rem;
+  }
+
 }
