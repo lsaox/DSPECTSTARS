@@ -21,7 +21,8 @@ function closeMobileMenu() {
 }
 
 menuButton.addEventListener("click", () => {
-  const menuIsOpen = mobileMenu.classList.contains("menu-visible");
+  const menuIsOpen =
+    mobileMenu.classList.contains("menu-visible");
 
   if (menuIsOpen) {
     closeMobileMenu();
@@ -30,9 +31,43 @@ menuButton.addEventListener("click", () => {
   }
 });
 
+
+/* ========================================
+   MOBILE NAV LINKS
+======================================== */
+
 mobileLinks.forEach((link) => {
-  link.addEventListener("click", closeMobileMenu);
+
+  link.addEventListener("click", (event) => {
+
+    const href = link.getAttribute("href");
+
+    /* External links like Instagram */
+    if (!href || !href.startsWith("#")) {
+      closeMobileMenu();
+      return;
+    }
+
+    const targetSection =
+      document.querySelector(href);
+
+    if (!targetSection) return;
+
+    event.preventDefault();
+
+    /* Scroll FIRST */
+    targetSection.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+    /* Close immediately */
+    closeMobileMenu();
+
+  });
+
 });
+
 
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
@@ -40,35 +75,67 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-/*
-  Slight logo movement based on the mouse position.
-  This only runs on devices that have a mouse.
-*/
 
-const logoArea = document.querySelector(".logo-area");
-const heroLogo = document.querySelector(".hero-logo");
+/* ========================================
+   LOGO MOUSE MOVEMENT
+======================================== */
 
-if (window.matchMedia("(pointer: fine)").matches) {
-  logoArea.addEventListener("mousemove", (event) => {
-    const area = logoArea.getBoundingClientRect();
+const logoArea =
+  document.querySelector(".logo-area");
 
-    const mouseX = event.clientX - area.left;
-    const mouseY = event.clientY - area.top;
+const heroLogo =
+  document.querySelector(".hero-logo");
 
-    const centerX = area.width / 2;
-    const centerY = area.height / 2;
+if (
+  logoArea &&
+  heroLogo &&
+  window.matchMedia("(pointer: fine)").matches
+) {
 
-    const moveX = (mouseX - centerX) / 45;
-    const moveY = (mouseY - centerY) / 45;
+  logoArea.addEventListener(
+    "mousemove",
+    (event) => {
 
-    heroLogo.style.transform =
-      `translate3d(${moveX}px, ${moveY}px, 0)`;
-  });
+      const area =
+        logoArea.getBoundingClientRect();
 
-  logoArea.addEventListener("mouseleave", () => {
-    heroLogo.style.transform = "";
-  });
-}/* ========================================
+      const mouseX =
+        event.clientX - area.left;
+
+      const mouseY =
+        event.clientY - area.top;
+
+      const centerX =
+        area.width / 2;
+
+      const centerY =
+        area.height / 2;
+
+      const moveX =
+        (mouseX - centerX) / 45;
+
+      const moveY =
+        (mouseY - centerY) / 45;
+
+      heroLogo.style.transform =
+        `translate3d(${moveX}px, ${moveY}px, 0)`;
+    }
+  );
+
+
+  logoArea.addEventListener(
+    "mouseleave",
+    () => {
+
+      heroLogo.style.transform = "";
+
+    }
+  );
+
+}
+
+
+/* ========================================
    GALLERY SCROLL REVEAL
 ======================================== */
 
@@ -76,7 +143,6 @@ const galleryItems =
   document.querySelectorAll(
     ".gallery-reveal"
   );
-
 
 const galleryObserver =
   new IntersectionObserver(
@@ -103,63 +169,11 @@ const galleryObserver =
 
     {
       threshold: 0.12,
-
-      rootMargin:
-        "0px 0px -40px 0px"
+      rootMargin: "0px 0px -40px 0px"
     }
 
   );
 
-
 galleryItems.forEach((item) => {
-
   galleryObserver.observe(item);
-
-});/* ========================================
-   MOBILE NAV LINKS
-========================================= */
-
-const mobileNavLinks = document.querySelectorAll(
-  '.mobile-nav-link'
-);
-
-mobileNavLinks.forEach(link => {
-
-  link.addEventListener('click', function (e) {
-
-    const targetId = this.getAttribute('href');
-
-    if (!targetId || !targetId.startsWith('#')) return;
-
-    const targetSection = document.querySelector(targetId);
-
-    if (!targetSection) return;
-
-    e.preventDefault();
-
-    /* Close mobile menu */
-    mobileMenu.classList.remove('active');
-    menuButton.classList.remove('active');
-
-    menuButton.setAttribute(
-      'aria-expanded',
-      'false'
-    );
-
-    document.body.classList.remove(
-      'menu-open'
-    );
-
-    /* Wait for menu to begin closing */
-    setTimeout(() => {
-
-      targetSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-
-    }, 1);
-
-  });
-
 });
