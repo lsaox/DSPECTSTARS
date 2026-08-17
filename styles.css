@@ -4315,3 +4315,392 @@ strong {
   }
 
 }
+
+
+/* ==================================================
+   FINAL MOBILE NAV OVERRIDE
+   Centered links + centered phone / Instagram icons
+   Compatible with the final DSPECTSTARS mobile nav.
+   KEEP THIS AT THE VERY BOTTOM OF styles.css
+================================================== */
+
+@media (max-width: 900px) {
+
+  /* Header stays clean with brand centered */
+  .header-inner {
+    position: relative;
+    display: flex;
+    width: calc(100% - 32px);
+    min-height: 70px;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0 auto;
+  }
+
+  .header-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1002;
+    max-width: calc(100% - 130px);
+    margin: 0;
+    overflow: hidden;
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+  }
+
+  .desktop-nav,
+  .header-instagram {
+    display: none !important;
+  }
+
+  /* Hamburger */
+  .menu-button {
+    position: relative;
+    z-index: 1102;
+    display: block;
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    margin: 0 0 0 auto;
+    padding: 0;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 50%;
+    outline: 0;
+    background: rgba(4,7,14,.42);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Supports both the old menu-line HTML and the final plain-span HTML */
+  .menu-button > span,
+  .menu-button .menu-line {
+    position: absolute;
+    left: 50%;
+    display: block;
+    width: 19px;
+    height: 1.5px;
+    margin: 0;
+    border: 0;
+    border-radius: 20px;
+    background: #fff;
+    transform: translateX(-50%);
+    transition:
+      top .22s ease,
+      transform .22s ease;
+  }
+
+  .menu-button > span:first-child,
+  .menu-button .menu-line-one {
+    top: 19px;
+  }
+
+  .menu-button > span:last-child,
+  .menu-button .menu-line-two {
+    top: 26px;
+  }
+
+  .menu-button.is-open > span:first-child,
+  .menu-button.button-open .menu-line-one {
+    top: 22px;
+    transform: translateX(-50%) rotate(45deg);
+  }
+
+  .menu-button.is-open > span:last-child,
+  .menu-button.button-open .menu-line-two {
+    top: 22px;
+    transform: translateX(-50%) rotate(-45deg);
+  }
+
+  /* Fullscreen overlay */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 1099;
+    display: block;
+    visibility: hidden;
+    width: 100%;
+    height: 100dvh;
+    padding: 0;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 50% 12%, rgba(43,91,255,.15), transparent 25rem),
+      radial-gradient(circle at 50% 100%, rgba(132,92,255,.10), transparent 25rem),
+      #05070d;
+    opacity: 0;
+    pointer-events: none;
+    transform: none;
+    transition:
+      opacity .20s ease,
+      visibility 0s linear .20s;
+  }
+
+  /* Supports both current and previous JS class names */
+  .mobile-menu.is-open,
+  .mobile-menu.menu-visible {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    transition:
+      opacity .20s ease,
+      visibility 0s linear 0s;
+  }
+
+  .mobile-menu-bg,
+  .mobile-menu-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .mobile-menu-grid {
+    opacity: .11;
+    background-image:
+      linear-gradient(rgba(82,239,255,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(82,239,255,.08) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .mobile-menu-glow {
+    pointer-events: none;
+  }
+
+  /* Inner wrapper used by final HTML */
+  .mobile-menu-inner {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    width: 100%;
+    height: 100dvh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding:
+      calc(90px + env(safe-area-inset-top))
+      22px
+      calc(28px + env(safe-area-inset-bottom));
+  }
+
+  /* If using the older HTML without mobile-menu-inner,
+     the nav still centers correctly */
+  .mobile-menu > .mobile-nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    width: min(420px, calc(100% - 44px));
+    transform: translate(-50%, -50%);
+  }
+
+  .mobile-nav {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    width: min(430px, 100%);
+    max-width: 430px;
+    max-height: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    overflow: visible;
+    text-align: center;
+  }
+
+  /* Final HTML links */
+  .mobile-nav a {
+    width: 100%;
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    margin: 0;
+    padding: 11px 8px;
+    border: 0;
+    border-bottom: 1px solid rgba(255,255,255,.07);
+    color: rgba(255,255,255,.86);
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(1.55rem, 7vw, 2.55rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: .035em;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .mobile-nav a:first-child {
+    border-top: 1px solid rgba(255,255,255,.07);
+  }
+
+  .mobile-nav a:hover,
+  .mobile-nav a:active {
+    color: #fff;
+    text-shadow: 0 0 20px rgba(82,239,255,.28);
+  }
+
+  /* Number labels from final HTML */
+  .mobile-nav a > span {
+    position: absolute;
+    left: 8px;
+    width: auto;
+    color: rgba(128,167,255,.65);
+    font-family: "Inter", sans-serif;
+    font-size: .52rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+  }
+
+  .mobile-nav a > strong {
+    font: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+  }
+
+  /* Do not let old Instagram-link styling interfere */
+  .mobile-nav .mobile-instagram {
+    width: 52px;
+    min-height: 52px;
+    height: 52px;
+    margin: 26px auto 0;
+    padding: 0;
+    border: 1px solid rgba(82,239,255,.30);
+    border-radius: 50%;
+    background: rgba(82,239,255,.05);
+    font-size: 1.08rem;
+  }
+
+  /* Final bottom icon row */
+  .mobile-menu-bottom {
+    width: 100%;
+    max-width: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 30px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,.07);
+  }
+
+  /* Make PHONE an icon-only circle */
+  .mobile-phone {
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 50%;
+    background: rgba(255,255,255,.035);
+    color: #fff;
+    font-size: 0;
+    text-decoration: none;
+    transition:
+      transform .2s ease,
+      border-color .2s ease,
+      background .2s ease;
+  }
+
+  .mobile-phone i {
+    color: #fff;
+    font-size: 1rem;
+  }
+
+  /* Instagram icon circle */
+  .mobile-social {
+    width: 50px;
+    height: 50px;
+    flex: 0 0 50px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 50%;
+    background: rgba(255,255,255,.035);
+    color: #fff;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition:
+      transform .2s ease,
+      border-color .2s ease,
+      background .2s ease;
+  }
+
+  .mobile-phone:active,
+  .mobile-social:active {
+    transform: scale(.94);
+    border-color: rgba(82,239,255,.48);
+    background: rgba(82,239,255,.08);
+  }
+
+  body.mobile-menu-open,
+  body.menu-active,
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 390px) {
+
+  .header-name {
+    max-width: calc(100% - 115px);
+    font-size: .68rem;
+    letter-spacing: .11em;
+  }
+
+  .menu-button {
+    width: 43px;
+    height: 43px;
+    flex-basis: 43px;
+  }
+
+  .menu-button > span:first-child,
+  .menu-button .menu-line-one {
+    top: 17px;
+  }
+
+  .menu-button > span:last-child,
+  .menu-button .menu-line-two {
+    top: 24px;
+  }
+
+  .menu-button.is-open > span:first-child,
+  .menu-button.is-open > span:last-child,
+  .menu-button.button-open .menu-line-one,
+  .menu-button.button-open .menu-line-two {
+    top: 21px;
+  }
+
+  .mobile-menu-inner {
+    padding-right: 17px;
+    padding-left: 17px;
+  }
+
+  .mobile-nav a {
+    min-height: 56px;
+    font-size: clamp(1.35rem, 6.7vw, 2rem);
+  }
+
+  .mobile-menu-bottom {
+    margin-top: 22px;
+  }
+
+  .mobile-phone,
+  .mobile-social {
+    width: 47px;
+    height: 47px;
+    flex-basis: 47px;
+  }
+}
