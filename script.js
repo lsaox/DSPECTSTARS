@@ -68,4 +68,51 @@ if (window.matchMedia("(pointer: fine)").matches) {
   logoArea.addEventListener("mouseleave", () => {
     heroLogo.style.transform = "";
   });
-}
+}/* ========================================
+   GALLERY SCROLL REVEAL
+======================================== */
+
+const galleryItems =
+  document.querySelectorAll(
+    ".gallery-reveal"
+  );
+
+
+const galleryObserver =
+  new IntersectionObserver(
+
+    (entries, observer) => {
+
+      entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add(
+            "gallery-visible"
+          );
+
+          observer.unobserve(
+            entry.target
+          );
+
+        }
+
+      });
+
+    },
+
+    {
+      threshold: 0.12,
+
+      rootMargin:
+        "0px 0px -40px 0px"
+    }
+
+  );
+
+
+galleryItems.forEach((item) => {
+
+  galleryObserver.observe(item);
+
+});

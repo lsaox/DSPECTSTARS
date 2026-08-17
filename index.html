@@ -844,6 +844,221 @@
       }
     }
 
+  
+    /* ===== CONTACT / NETLIFY FORM ===== */
+    .contact-section {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: clamp(86px, 9vw, 132px) 24px;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(63, 105, 255, 0.12), transparent 30rem),
+        radial-gradient(circle at 86% 80%, rgba(138, 76, 255, 0.10), transparent 28rem),
+        #05070d;
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+
+    .contact-wrap {
+      width: min(1280px, 100%);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+      gap: clamp(42px, 7vw, 96px);
+      align-items: start;
+    }
+
+    .contact-copy {
+      position: sticky;
+      top: 110px;
+    }
+
+    .contact-copy h2 {
+      max-width: 650px;
+      margin: 0;
+      color: #fff;
+      font-family: "Orbitron", sans-serif;
+      font-size: clamp(2.7rem, 5vw, 5.2rem);
+      font-weight: 500;
+      line-height: .98;
+      letter-spacing: -0.055em;
+      text-wrap: balance;
+    }
+
+    .contact-copy p {
+      max-width: 570px;
+      margin: 28px 0 0;
+      color: rgba(255,255,255,.64);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .contact-services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+
+    .contact-services span {
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: 999px;
+      background: rgba(255,255,255,.025);
+      color: rgba(255,255,255,.74);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .contact-card {
+      padding: clamp(24px, 4vw, 42px);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 26px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+      box-shadow: 0 30px 90px rgba(0,0,0,.32);
+      backdrop-filter: blur(14px);
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 18px;
+    }
+
+    .contact-form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .form-field {
+      display: grid;
+      gap: 9px;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      color: rgba(255,255,255,.70);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      min-height: 56px;
+      padding: 0 16px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      outline: none;
+      background: rgba(1,3,8,.68);
+      color: #fff;
+      font-family: "Inter", sans-serif;
+      font-size: .95rem;
+      transition: border-color .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+
+    .form-field textarea {
+      min-height: 150px;
+      padding-top: 15px;
+      resize: vertical;
+    }
+
+    .form-field select {
+      cursor: pointer;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: rgba(255,255,255,.28);
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: rgba(128,167,255,.82);
+      background: rgba(8,13,24,.88);
+      box-shadow: 0 0 0 4px rgba(90,132,255,.09);
+    }
+
+    .contact-submit {
+      width: 100%;
+      min-height: 60px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 13px;
+      margin-top: 4px;
+      border: 0;
+      border-radius: 999px;
+      background: #fff;
+      color: #070a11;
+      font-family: "Orbitron", sans-serif;
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .contact-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 48px rgba(104,141,255,.22);
+    }
+
+    .contact-note {
+      margin: 2px 0 0;
+      color: rgba(255,255,255,.38);
+      font-size: .75rem;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-copy {
+        position: static;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .contact-section {
+        padding: 72px 16px;
+      }
+
+      .contact-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field.full {
+        grid-column: auto;
+      }
+
+      .contact-card {
+        padding: 22px 16px;
+        border-radius: 20px;
+      }
+
+      .contact-services {
+        gap: 8px;
+      }
+
+      .contact-services span {
+        font-size: .64rem;
+      }
+    }
+
   </style>
 
 </head>
@@ -1032,9 +1247,310 @@
     delivering craftsmanship you'll enjoy every time you drive.
   </p>
 </section>
+<!-- =========================
+     GALLERY SECTION
+========================= -->
+
+<section id="gallery" class="gallery-section">
+
+  <div class="gallery-container">
+
+    <!-- HEADING -->
+    <div class="gallery-heading">
+
+      <span class="showcase-eyebrow">
+        Recent Projects
+      </span>
+
+   
+
+      <p>
+        Take a look at some of our custom starlight headliners and
+        ambient lighting installs
+      </p>
+
+    </div>
 
 
+    <!-- GALLERY -->
+    <div class="ds-gallery-grid">
 
+      <div class="ds-gallery-item gallery-reveal gallery-large">
+        <img src="assets/1.png" alt="DSPECTSTARS custom installation" loading="lazy">
+      </div>
+
+      <div class="ds-gallery-item gallery-reveal">
+        <img src="assets/2.png" alt="DSPECTSTARS custom installation" loading="lazy">
+      </div>
+
+      <div class="ds-gallery-item gallery-reveal">
+        <img src="assets/3.png" alt="DSPECTSTARS custom installation" loading="lazy">
+      </div>
+
+      <div class="ds-gallery-item gallery-reveal">
+        <img src="assets/4.png" alt="DSPECTSTARS custom installation" loading="lazy">
+      </div>
+
+      <div class="ds-gallery-item gallery-reveal gallery-wide">
+        <img src="assets/55.png" alt="DSPECTSTARS custom installation" loading="lazy">
+      </div>
+
+      <div class="ds-gallery-item gallery-reveal">
+        <img src="assets/6.png" alt="DSPECTSTARS custom installation" loading="lazy">
+      </div>
+
+      <div class="ds-gallery-item gallery-reveal">
+        <img src="assets/7.png" alt="DSPECTSTARS custom installation" loading="lazy">
+      </div>
+
+      <div class="ds-gallery-item gallery-reveal gallery-tall">
+        <img src="assets/8.png" alt="DSPECTSTARS custom installation" loading="lazy">
+      </div>
+
+      <div class="ds-gallery-item gallery-reveal">
+        <img src="assets/9.png" alt="DSPECTSTARS custom installation" loading="lazy">
+      </div>
+
+      <div class="ds-gallery-item gallery-reveal gallery-wide">
+        <img src="assets/10.png" alt="DSPECTSTARS custom installation" loading="lazy">
+      </div>
+
+      <div class="ds-gallery-item gallery-reveal">
+        <img src="assets/11.png" alt="DSPECTSTARS custom installation" loading="lazy">
+      </div>
+
+      <div class="ds-gallery-item gallery-reveal">
+        <img src="assets/12.png" alt="DSPECTSTARS custom installation" loading="lazy">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<section id="contact" class="contact-section">
+
+  <div class="contact-container">
+
+    <!-- TOP HEADING -->
+    <div class="contact-heading">
+      <span class="showcase-eyebrow">Start Your Build</span>
+
+      <h2>Tell Us What You Want Done.</h2>
+
+      <p>
+        Send us your vehicle information and the service you're interested in.
+        Whether you want a starlight headliner, ambient lighting, a full wrap,
+        or a custom setup, we'll review your request and get back to you with
+        the next steps.
+      </p>
+
+
+    </div>
+
+
+    <!-- IMAGE + FORM -->
+    <div class="contact-wrap">
+
+      <!-- FULL LEFT IMAGE -->
+      <div class="contact-image">
+
+        <img
+          src="assets/stars.png"
+          alt="DSPECTSTARS custom starlight headliner"
+          loading="lazy"
+        >
+
+        <div class="contact-image-overlay"></div>
+
+        <div class="contact-image-label">
+          <span>DSPECTSTARS</span>
+          <strong>Built Around Your Vision.</strong>
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT FORM -->
+      <div class="contact-card">
+
+        <form
+          name="dspectstars-contact"
+          method="POST"
+          action="/thank-you.html"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="contact-form"
+        >
+
+          <input
+            type="hidden"
+            name="form-name"
+            value="dspectstars-contact"
+          >
+
+          <p hidden>
+            <label>
+              Don't fill this out if you're human:
+              <input name="bot-field">
+            </label>
+          </p>
+
+
+          <div class="contact-form-grid">
+
+            <div class="form-field">
+              <label for="name">Name</label>
+
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your name"
+                autocomplete="name"
+                required
+              >
+            </div>
+
+
+            <div class="form-field">
+              <label for="phone">Phone</label>
+
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="Your phone number"
+                autocomplete="tel"
+                required
+              >
+            </div>
+
+
+            <div class="form-field full">
+              <label for="email">Email</label>
+
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="you@email.com"
+                autocomplete="email"
+                required
+              >
+            </div>
+
+
+            <div class="form-field">
+              <label for="year">Vehicle Year</label>
+
+              <input
+                id="year"
+                name="vehicle-year"
+                type="text"
+                inputmode="numeric"
+                placeholder="2024"
+                required
+              >
+            </div>
+
+
+            <div class="form-field">
+              <label for="make-model">Make & Model</label>
+
+              <input
+                id="make-model"
+                name="vehicle-make-model"
+                type="text"
+                placeholder="BMW M4"
+                required
+              >
+            </div>
+
+
+            <div class="form-field full">
+              <label for="service">Service</label>
+
+              <select
+                id="service"
+                name="service"
+                required
+              >
+                <option value="" selected disabled>
+                  Select a service
+                </option>
+
+                <option value="Starlight Headliner">
+                  Starlight Headliner
+                </option>
+
+                <option value="Ambient Lighting">
+                  Ambient Lighting
+                </option>
+
+                <option value="Vehicle Wrap">
+                  Vehicle Wrap
+                </option>
+
+                <option value="Starlights + Ambient Lighting">
+                  Starlights + Ambient Lighting
+                </option>
+
+                <option value="Suede Headliner">
+                  Suede Headliner
+                </option>
+
+                <option value="Custom Installation">
+                  Custom Installation
+                </option>
+
+                <option value="Other">
+                  Other
+                </option>
+
+              </select>
+            </div>
+
+
+            <div class="form-field full">
+              <label for="message">
+                Tell Us About Your Build
+              </label>
+
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us the colors, style, package, wrap color, star count, or anything else you have in mind."
+                required
+              ></textarea>
+            </div>
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="contact-submit"
+          >
+            Send My Request
+
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+
+          <p class="contact-note">
+            Submit your request and we'll contact you about pricing and availability.
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
 <section id="pricing" class="py-24 bg-[#05070d]">
     <div class="max-w-7xl mx-auto px-6">
@@ -1385,7 +1901,11 @@
     </div>
   </section>
 
-  <footer id="contact" class="site-footer">
+
+
+
+
+  <footer class="site-footer">
     <div class="footer-inner">
 
       <div class="footer-top">
